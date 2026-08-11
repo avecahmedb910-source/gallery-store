@@ -7,7 +7,7 @@
 - [x] WhatsApp order redirect to 01055700826 with all order details prefilled
 - [x] Fixed WhatsApp contact button for 01055700826
 - [x] Fixed/header/footer Instagram link to https://www.instagram.com/moony_stitch/
-- [ ] Database schema for products, product images, variants, and order records/intent metadata
+- [x] Database schema for products, product images, variants, and order records/intent metadata
 - [x] Protected admin dashboard for adding, editing, and deleting products
 - [x] Product image upload flow backed by managed file storage
 - [x] Public product listing and detail data procedures

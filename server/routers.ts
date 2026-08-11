@@ -5,6 +5,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, router } from "./_core/trpc";
 import {
   createProduct,
+  createOrderIntent,
   deleteProduct,
   getProductBySlug,
   listActiveProducts,
@@ -37,6 +38,15 @@ export const appRouter = router({
   products: router({
     list: publicProcedure.query(() => listActiveProducts()),
     bySlug: publicProcedure.input(z.object({ slug: z.string() })).query(({ input }) => getProductBySlug(input.slug)),
+    recordOrderIntent: publicProcedure.input(z.object({
+      productId: z.number().int().positive(),
+      productName: z.string().min(1),
+      variant: z.string().min(1),
+      quantity: z.number().int().positive(),
+      customerName: z.string().min(2),
+      customerPhone: z.string().min(5),
+      customerAddress: z.string().min(5),
+    })).mutation(({ input }) => createOrderIntent(input)),
     adminList: adminProcedure.query(() => listAllProducts()),
     create: adminProcedure.input(productInput).mutation(({ input }) => createProduct(input)),
     update: adminProcedure.input(productInput.extend({ id: z.number().int().positive() })).mutation(({ input }) => {

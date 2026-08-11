@@ -1,6 +1,6 @@
 import { and, asc, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertProduct, InsertUser, Product, products, users } from "../drizzle/schema";
+import { InsertProduct, InsertUser, Product, products, users, orderIntents } from "../drizzle/schema";
 import { ENV } from "./_core/env";
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -94,6 +94,21 @@ export async function updateProduct(id: number, input: Partial<Omit<InsertProduc
   if (input.images) values.images = JSON.stringify(input.images);
   if (input.variants) values.variants = JSON.stringify(input.variants);
   await db.update(products).set(values).where(eq(products.id, id));
+}
+
+export async function createOrderIntent(input: {
+  productId: number;
+  productName: string;
+  variant: string;
+  quantity: number;
+  customerName: string;
+  customerPhone: string;
+  customerAddress: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database unavailable");
+  const result = await db.insert(orderIntents).values(input);
+  return result[0].insertId;
 }
 
 export async function deleteProduct(id: number) {

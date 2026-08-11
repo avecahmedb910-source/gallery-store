@@ -16,6 +16,7 @@ export default function Product() {
   const [variant, setVariant] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [form, setForm] = useState({ name: "", phone: "", address: "" });
+  const recordOrderIntent = trpc.products.recordOrderIntent.useMutation();
 
   if (isLoading) return <div dir="rtl" className="min-h-screen bg-[#fbfaf8] p-10 text-center font-bold">بنجهز التفاصيل...</div>;
   if (!product) return <div dir="rtl" className="min-h-screen bg-[#fbfaf8] p-10 text-center"><h1 className="text-2xl font-black">المنتج مش موجود</h1><Link href="/"><Button className="mt-5 rounded-full">ارجعي للمنتجات</Button></Link></div>;
@@ -23,6 +24,7 @@ export default function Product() {
   const submit = (event: FormEvent) => {
     event.preventDefault();
     if (!variant) return;
+    recordOrderIntent.mutate({ productId: product.id, productName: product.name, variant, quantity, customerName: form.name, customerPhone: form.phone, customerAddress: form.address });
     window.open(getWhatsAppOrderUrl({ ...form, product: product.name, variant, quantity }), "_blank", "noopener,noreferrer");
   };
 

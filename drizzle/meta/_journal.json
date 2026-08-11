@@ -15,6 +15,13 @@
       "when": 1786449901751,
       "tag": "0001_gray_talisman",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786450594955,
+      "tag": "0002_demonic_fat_cobra",
+      "breakpoints": true
     }
   ]
 }

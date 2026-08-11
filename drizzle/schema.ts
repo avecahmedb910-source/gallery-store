@@ -27,7 +27,21 @@ export const products = mysqlTable("products", {
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
 
+export const orderIntents = mysqlTable("orderIntents", {
+  id: int("id").autoincrement().primaryKey(),
+  productId: int("productId").notNull(),
+  productName: varchar("productName", { length: 220 }).notNull(),
+  variant: varchar("variant", { length: 180 }).notNull(),
+  quantity: int("quantity").notNull(),
+  customerName: varchar("customerName", { length: 180 }).notNull(),
+  customerPhone: varchar("customerPhone", { length: 40 }).notNull(),
+  customerAddress: text("customerAddress").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 export type Product = typeof products.$inferSelect;
 export type InsertProduct = typeof products.$inferInsert;
+export type OrderIntent = typeof orderIntents.$inferSelect;
+export type InsertOrderIntent = typeof orderIntents.$inferInsert;
