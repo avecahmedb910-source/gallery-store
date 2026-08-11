@@ -1,0 +1,17 @@
+# Project TODO
+
+- [x] Arabic RTL storefront shell with Cairo font and responsive mobile-first layout
+- [x] Sales-driven landing page with product cards, prices, discounts, trust indicators, and Instagram links
+- [x] Product details page with gallery, current/original price, variants, quantity, and Buy Now CTA
+- [x] Order form collecting customer name, phone, address, selected product, chosen variant, and quantity
+- [x] WhatsApp order redirect to 01055700826 with all order details prefilled
+- [x] Fixed WhatsApp contact button for 01055700826
+- [x] Fixed/header/footer Instagram link to https://www.instagram.com/moony_stitch/
+- [ ] Database schema for products, product images, variants, and order records/intent metadata
+- [x] Protected admin dashboard for adding, editing, and deleting products
+- [x] Product image upload flow backed by managed file storage
+- [x] Public product listing and detail data procedures
+- [x] Admin-only product CRUD procedures with authentication and authorization
+- [x] Vitest coverage for WhatsApp message generation and product CRUD authorization
+- [x] Responsive visual verification on desktop and mobile
+- [x] Final typecheck and test run
