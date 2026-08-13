@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildWhatsAppMessage, getWhatsAppOrderUrl, WHATSAPP_NUMBER } from "../client/src/lib/whatsapp";
 
-describe("Moony Stitch WhatsApp orders", () => {
+describe("Gallery Store WhatsApp orders", () => {
   it("includes every required order detail", () => {
     const message = buildWhatsAppMessage({
       name: "سارة علي",
@@ -11,6 +11,8 @@ describe("Moony Stitch WhatsApp orders", () => {
       variant: "بيج",
       quantity: 2,
     });
+    expect(message).toContain("طلب جديد من Gallery Store");
+    expect(message).not.toContain("Moony Stitch");
     expect(message).toContain("اسم العميل: سارة علي");
     expect(message).toContain("رقم الهاتف: 01000000000");
     expect(message).toContain("العنوان: القاهرة، مدينة نصر");

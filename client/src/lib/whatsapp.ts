@@ -9,11 +9,13 @@ export type OrderDetails = {
   product: string;
   variant: string;
   quantity: number;
+  unitPrice?: number;
+  total?: number;
 };
 
 export function buildWhatsAppMessage(order: OrderDetails) {
   return [
-    "طلب جديد من Moony Stitch",
+    "طلب جديد من Gallery Store",
     "",
     `اسم العميل: ${order.name}`,
     `رقم الهاتف: ${order.phone}`,
@@ -21,6 +23,8 @@ export function buildWhatsAppMessage(order: OrderDetails) {
     `المنتج: ${order.product}`,
     `الاختيار: ${order.variant}`,
     `الكمية: ${order.quantity}`,
+    ...(order.unitPrice !== undefined ? [`سعر الوحدة: ${order.unitPrice.toLocaleString("ar-EG")} ج.م`] : []),
+    ...(order.total !== undefined ? [`الإجمالي: ${order.total.toLocaleString("ar-EG")} ج.م`] : []),
   ].join("\n");
 }
 
@@ -29,5 +33,5 @@ export function getWhatsAppOrderUrl(order: OrderDetails) {
 }
 
 export function getWhatsAppContactUrl() {
-  return `https://wa.me/${WHATSAPP_URL_NUMBER}?text=${encodeURIComponent("مرحبًا، أريد الاستفسار عن منتجات Moony Stitch")}`;
+  return `https://wa.me/${WHATSAPP_URL_NUMBER}?text=${encodeURIComponent("مرحبًا، أريد الاستفسار عن منتجات Gallery Store")}`;
 }

@@ -60,3 +60,14 @@
 - [x] Save a fresh checkpoint only after the complete verification passes
 - [x] Add a clear owner-only entry point to the product management dashboard
 - [x] Verify owner access and product add/delete actions, then save a checkpoint
+- [x] Add a remove button for each product image in the admin preview
+- [x] Replace the WhatsApp message store name from Moony Stitch to Gallery Store
+- [x] Add a professional order completion flow with complete WhatsApp details
+- [x] Show a customer-facing order confirmation state after opening WhatsApp
+- [x] Verify order completion and confirmation on desktop and mobile, then save a checkpoint
+- [x] Verify the updated WhatsApp message and save a checkpoint
+- [x] Add fallback UI when WhatsApp is blocked or cannot open
+- [x] Handle order-intent success and error states before showing confirmation
+- [x] Exercise order completion on desktop and mobile, including confirmation state
+- [x] Save a fresh checkpoint after the complete order-flow verification
+- [x] Verify removing an incorrect image before save, then save a checkpoint
