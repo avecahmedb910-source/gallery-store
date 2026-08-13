@@ -40,7 +40,7 @@ describe("products.create success", () => {
       description: "هدية غير تقليدية ومميزة",
       price: 110,
       compareAtPrice: null,
-      images: ["https://example.com/gift-box.jpg"],
+      images: ["/manus-storage/gallery-store/admin/gift-box.jpg"],
       variants: ["اختيار واحد"],
       isActive: true,
     };
@@ -48,5 +48,20 @@ describe("products.create success", () => {
     const caller = appRouter.createCaller(adminContext());
     await expect(caller.products.create(product)).resolves.toBe(42);
     expect(createProduct).toHaveBeenCalledWith(product);
+  });
+
+  it("rejects a malformed image URL", async () => {
+    const caller = appRouter.createCaller(adminContext());
+
+    await expect(caller.products.create({
+      slug: "bad-image-product",
+      name: "منتج بصورة غير صالحة",
+      description: "وصف المنتج",
+      price: 100,
+      compareAtPrice: null,
+      images: ["not-a-url"],
+      variants: ["اختيار واحد"],
+      isActive: true,
+    })).rejects.toMatchObject({ code: "BAD_REQUEST" });
   });
 });

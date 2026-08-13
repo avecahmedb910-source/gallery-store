@@ -42,3 +42,8 @@
 - [x] Add a regression test for a valid admin product creation request
 - [x] Verify the save flow with valid product data and confirm the list refresh behavior
 - [x] Save a fresh checkpoint after the save-flow verification
+
+- [x] Diagnose Invalid URL from uploaded product image links
+- [x] Normalize uploaded image URLs before product creation and show a clear validation error
+- [x] Add regression coverage for valid and invalid image URL handling
+- [x] Verify image upload and product save flow, then save a new checkpoint

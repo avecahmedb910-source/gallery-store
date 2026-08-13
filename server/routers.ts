@@ -20,7 +20,7 @@ const productInput = z.object({
   description: z.string().min(2),
   price: z.number().int().nonnegative(),
   compareAtPrice: z.number().int().nonnegative().nullable().optional(),
-  images: z.array(z.string().url()).min(1),
+  images: z.array(z.union([z.string().url(), z.string().regex(/^\/manus-storage\//, "رابط الصورة غير صالح")])).min(1),
   variants: z.array(z.string().min(1)).min(1),
   isActive: z.boolean().default(true),
 });
