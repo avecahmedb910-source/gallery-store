@@ -34,3 +34,11 @@
 - [x] Rename the admin dashboard title and visible copy from Moony Stitch to Gallery Store
 - [x] Search the project for remaining visible Moony Stitch branding and replace it
 - [x] Verify the admin page and save a fresh checkpoint
+
+- [x] Diagnose and fix admin product save button not persisting products
+- [x] Add or update regression test for successful product creation
+- [x] Verify product save flow in the admin UI and save a new checkpoint
+
+- [x] Add a regression test for a valid admin product creation request
+- [x] Verify the save flow with valid product data and confirm the list refresh behavior
+- [x] Save a fresh checkpoint after the save-flow verification
