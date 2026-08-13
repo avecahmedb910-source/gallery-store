@@ -24,3 +24,9 @@
 - [x] Save a fresh checkpoint after the final Gallery Store edits
 - [x] Replace primary storefront colors with Gallery Store brand tokens in the home experience
 - [x] Save checkpoint after the final visual-token update
+
+- [x] Enhance the uploaded Gallery Store logo for web use without changing its identity
+- [x] Add the enhanced logo to the header and hero brand mark
+- [x] Verify logo rendering responsively and save a new checkpoint
+- [x] Verify the enhanced logo on desktop viewport
+- [x] Save a fresh checkpoint after final logo integration
