@@ -70,4 +70,22 @@
 - [x] Handle order-intent success and error states before showing confirmation
 - [x] Exercise order completion on desktop and mobile, including confirmation state
 - [x] Save a fresh checkpoint after the complete order-flow verification
+- [x] Remove the confusing WhatsApp failure message from the customer-facing completion flow
+- [x] Build a Gallery Store themed order confirmation page with order number and full details
+- [x] Add return-to-store and WhatsApp contact actions on the confirmation page
+- [x] Verify the confirmation page on mobile and desktop, then save a checkpoint
+- [x] Remove the confusing WhatsApp failure message from the customer-facing completion flow
+- [x] Show immediate order confirmation after the customer presses the complete order
+- [x] Verify the updated completion flow on mobile and desktop, then save a checkpoint
+- [x] Show the Gallery Store confirmation page immediately after pressing complete order
+- [x] Capture confirmation-page verification on mobile and desktop before the next checkpoint
+
+- [x] Prepare the complete Gallery Store code for an editable open-source repository
+- [x] Publish the code to GitHub and provide the repository link
+- [x] Inspect gallery-store-updated.zip and identify its application structure
+- [x] Integrate the uploaded site files into the active Gallery Store project
+- [x] Run typecheck, tests, build, and visual verification for the uploaded site
+- [x] Save a new checkpoint and provide the working site link
+- [ ] Sync the latest Gallery Store confirmation-flow changes to GitHub
+- [ ] Verify and provide the updated GitHub repository link
 - [x] Verify removing an incorrect image before save, then save a checkpoint

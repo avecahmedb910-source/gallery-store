@@ -24,31 +24,31 @@ class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex items-center justify-center min-h-screen p-8 bg-background">
-          <div className="flex flex-col items-center w-full max-w-2xl p-8">
-            <AlertTriangle
-              size={48}
-              className="text-destructive mb-6 flex-shrink-0"
-            />
+        <div dir="rtl" className="flex min-h-screen items-center justify-center bg-[var(--brand-surface,#fffaf6)] p-8">
+          <div className="flex w-full max-w-lg flex-col items-center rounded-[2rem] border border-[#eadfd3] bg-white p-8 text-center shadow-xl shadow-[#8e5c46]/10">
+            <AlertTriangle size={44} className="mb-5 flex-shrink-0 text-[#c05a3f]" />
 
-            <h2 className="text-xl mb-4">An unexpected error occurred.</h2>
+            <h2 className="text-xl font-black">حصل خطأ غير متوقع</h2>
+            <p className="mt-2 text-sm leading-6 text-[#806e66]">
+              معلش، حصلت مشكلة مؤقتة في الموقع. جربي تحدّثي الصفحة، ولو المشكلة استمرت كلمينا على واتساب.
+            </p>
 
-            <div className="p-4 w-full rounded bg-muted overflow-auto mb-6">
-              <pre className="text-sm text-muted-foreground whitespace-break-spaces">
-                {this.state.error?.stack}
-              </pre>
-            </div>
+            {import.meta.env.DEV && this.state.error?.stack && (
+              <div className="mt-6 w-full overflow-auto rounded-xl bg-[#f3ebe4] p-4 text-right">
+                <pre className="whitespace-break-spaces text-xs text-[#806e66]">{this.state.error.stack}</pre>
+              </div>
+            )}
 
             <button
               onClick={() => window.location.reload()}
               className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg",
-                "bg-primary text-primary-foreground",
-                "hover:opacity-90 cursor-pointer"
+                "mt-6 flex items-center gap-2 rounded-full px-6 py-2.5 font-black",
+                "bg-[var(--brand-plum,#211b2b)] text-white",
+                "transition hover:-translate-y-0.5 hover:opacity-90 cursor-pointer"
               )}
             >
               <RotateCcw size={16} />
-              Reload Page
+              تحديث الصفحة
             </button>
           </div>
         </div>
