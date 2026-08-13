@@ -58,3 +58,5 @@
 - [x] Reproduce and fix immediate admin image preview using a local object URL
 - [x] Verify admin upload, preview, save, and public product retrieval end to end
 - [x] Save a fresh checkpoint only after the complete verification passes
+- [x] Add a clear owner-only entry point to the product management dashboard
+- [x] Verify owner access and product add/delete actions, then save a checkpoint

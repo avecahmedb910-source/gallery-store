@@ -3,11 +3,13 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { trpc } from "@/lib/trpc";
 import { getWhatsAppContactUrl, INSTAGRAM_URL } from "@/lib/whatsapp";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 const formatPrice = (value: number) => `${value.toLocaleString("ar-EG")} ج.م`;
 
 export default function Home() {
   const { data: products = [], isLoading } = trpc.products.list.useQuery();
+  const { user } = useAuth();
 
   return (
     <div dir="rtl" className="min-h-screen bg-[var(--brand-surface)] text-[var(--brand-ink)] pb-20">
@@ -19,7 +21,7 @@ export default function Home() {
             <div><div className="text-lg font-black tracking-tight">Gallery Store</div><div className="text-[10px] font-bold text-[#9e7b68]">بيت الهدايا والهاند ميد</div></div>
           </Link>
           <nav className="hidden items-center gap-8 text-sm font-bold md:flex"><a href="#products" className="hover:text-[var(--brand-rose)]">المنتجات</a><a href="#why" className="hover:text-[var(--brand-rose)]">ليه Gallery Store؟</a><a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[var(--brand-rose)]"><Instagram size={16}/> Instagram</a></nav>
-          <a href={getWhatsAppContactUrl()} target="_blank" rel="noreferrer" className="hidden rounded-full bg-[#2d9b62] px-5 py-2.5 text-sm font-black text-white shadow-lg shadow-[#2d9b62]/20 transition hover:-translate-y-0.5 sm:block">كلمينا على واتساب</a>
+          <div className="flex items-center gap-2"><a href={getWhatsAppContactUrl()} target="_blank" rel="noreferrer" className="hidden rounded-full bg-[#2d9b62] px-5 py-2.5 text-sm font-black text-white shadow-lg shadow-[#2d9b62]/20 transition hover:-translate-y-0.5 sm:block">كلمينا على واتساب</a>{user?.role === "admin" && <Link href="/admin"><Button variant="outline" className="rounded-full border-[var(--brand-copper)] px-4 py-2 text-xs font-black text-[var(--brand-plum)]">إدارة المنتجات</Button></Link>}</div>
         </div>
       </header>
 
