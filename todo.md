@@ -47,3 +47,14 @@
 - [x] Normalize uploaded image URLs before product creation and show a clear validation error
 - [x] Add regression coverage for valid and invalid image URL handling
 - [x] Verify image upload and product save flow, then save a new checkpoint
+- [x] Diagnose and fix broken product image rendering from `/manus-storage/...` URLs in storefront and product detail views
+- [x] Add regression coverage for product image URL normalization/rendering
+- [x] Verify image display on desktop and mobile, then save a fresh checkpoint
+- [x] Diagnose broken image preview immediately after admin upload
+- [x] Fix upload response and client-side image preview for admin product images
+- [x] Verify admin upload, product save, and storefront rendering on desktop and mobile
+- [x] Replace the broken product image with the user-provided product photo
+- [x] Verify the repaired product photo on admin and storefront views, then save a checkpoint
+- [x] Reproduce and fix immediate admin image preview using a local object URL
+- [x] Verify admin upload, preview, save, and public product retrieval end to end
+- [x] Save a fresh checkpoint only after the complete verification passes

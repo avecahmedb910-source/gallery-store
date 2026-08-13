@@ -14,6 +14,11 @@ import {
 } from "./db";
 import { storagePut } from "./storage";
 
+export function normalizeUploadedFileName(fileName: string): string {
+  const extension = fileName.match(/\.[a-z0-9]{2,5}$/i)?.[0].toLowerCase() ?? ".jpg";
+  return `product-image${extension}`;
+}
+
 const productInput = z.object({
   slug: z.string().min(2).max(180),
   name: z.string().min(2).max(220),
@@ -62,7 +67,8 @@ export const appRouter = router({
       const [, encoded] = input.dataUrl.split(",");
       if (!encoded) throw new Error("صورة غير صالحة");
       const buffer = Buffer.from(encoded, "base64");
-      const uploaded = await storagePut(`moony-stitch/${ctx.user.id}/${input.fileName}`, buffer, input.contentType);
+      const safeFileName = normalizeUploadedFileName(input.fileName);
+      const uploaded = await storagePut(`gallery-store/${ctx.user.id}/${safeFileName}`, buffer, input.contentType);
       return uploaded.url;
     }),
   }),
