@@ -30,3 +30,7 @@
 - [x] Verify logo rendering responsively and save a new checkpoint
 - [x] Verify the enhanced logo on desktop viewport
 - [x] Save a fresh checkpoint after final logo integration
+
+- [x] Rename the admin dashboard title and visible copy from Moony Stitch to Gallery Store
+- [x] Search the project for remaining visible Moony Stitch branding and replace it
+- [x] Verify the admin page and save a fresh checkpoint
