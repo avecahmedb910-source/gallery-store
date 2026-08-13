@@ -1,6 +1,6 @@
 export const WHATSAPP_NUMBER = "01055700826";
 const WHATSAPP_URL_NUMBER = `20${WHATSAPP_NUMBER.slice(1)}`;
-export const INSTAGRAM_URL = "https://www.instagram.com/moony_stitch/";
+export const INSTAGRAM_URL = "https://www.instagram.com/gallery_store16/";
 
 export type OrderDetails = {
   name: string;

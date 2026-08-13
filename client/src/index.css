@@ -3,15 +3,22 @@
 @import "tw-animate-css";
 
 :root {
+  --brand-surface: #fffaf6;
+  --brand-ink: #3a2730;
+  --brand-plum: #211b2b;
+  --brand-rose: #b56d50;
+  --brand-copper: #c58b65;
+  --brand-sand: #f2e8df;
+  --brand-muted: #806e66;
   font-family: "Cairo", sans-serif;
-  color: #201d2b;
-  background: #fbfaf8;
+  color: var(--brand-ink);
+  background: var(--brand-surface);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; background: #fbfaf8; }
+body { margin: 0; min-width: 320px; background: #fffaf6; }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
-::selection { background: #e2b987; color: #211b2b; }
+::selection { background: #d9a38f; color: #3a2730; }

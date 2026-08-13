@@ -15,3 +15,12 @@
 - [x] Vitest coverage for WhatsApp message generation and product CRUD authorization
 - [x] Responsive visual verification on desktop and mobile
 - [x] Final typecheck and test run
+
+- [x] Review Gallery Store Instagram page and capture public brand cues
+- [x] Update storefront brand name, copy, colors, and Instagram links for Gallery Store
+- [x] Preserve WhatsApp ordering and admin product management for Gallery Store
+- [x] Verify new Gallery Store storefront visually and save a checkpoint
+- [x] Update Gallery Store color palette and brand-specific visual tokens
+- [x] Save a fresh checkpoint after the final Gallery Store edits
+- [x] Replace primary storefront colors with Gallery Store brand tokens in the home experience
+- [x] Save checkpoint after the final visual-token update
